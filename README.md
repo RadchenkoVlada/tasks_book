@@ -1,3 +1,3 @@
 # Tasks from book "Python for everybody" by Charles R. Severance
 
-Done by Vlada Radchenko 
+There are completed tasks from the book which have done by me.

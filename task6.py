@@ -22,17 +22,16 @@ def find_max(numbers):
 
 if __name__ == '__main__':
 
-    numbers = []  #why i can't leave there an empty list
+    numbers = []
     element = ""
     while element != "done":
         element = input("Enter a elem:\n")
         numbers.append(element)
 
-    print("numbers",type(numbers))
-    int_numbers = [ int(x) for x in numbers[:-1] ]
-    # for i, v in enumerate(numbers): numbers[i] = int(v)
+    print("numbers", type(numbers))
+    int_numbers = [int(x) for x in numbers[:-1]]
     print("int_numbers", type(int_numbers))
-    print("Maximum is ",find_max(int_numbers))
+    print("Maximum is ", find_max(int_numbers))
     print("built-in function max = ", max(int_numbers))
     print("Minimum is ", find_min(int_numbers))
     print("built-in function min = ", min(int_numbers))

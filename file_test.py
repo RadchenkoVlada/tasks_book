@@ -26,17 +26,5 @@ if __name__ == '__main__':
     opening_file(name_file)
     s = '1 2\t 3\n 4'
     print(repr(s))
-    # writing_in_file(name_file)
 
-
-
-   # fhand = open('mbox.txt') # another way to read file
-   # inp = fhand.read()
-   # print(len(inp))
-   # print(inp[:107])  # use string slicing to print out the first 106 characters of the string data stored in inp
-   # fhand = open('mbox.txt')
-   # count = 0
-   # for line in fhand:
-   #     if line.startswith('From:'):
-   #         print(line)
 

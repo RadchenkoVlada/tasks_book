@@ -19,8 +19,9 @@ Test your file on the mbox.txt and mbox-short.txt files.
 
 def opening_file(name_file):
     # how
-    if name_file == "na na":  # a harmless Easter Egg
+    if name_file == "na na boo boo":  # a harmless Easter Egg
         print("NA NA BOO BOO TO YOU - You have been punk'd!")
+        exit()
     try:
         with open(name_file, "r") as file:
             count = 0
@@ -48,17 +49,16 @@ if __name__ == '__main__':
     opening_file(name_file)
 
 """
-
-Сorrect answers:
+Correct answer:
 
 Enter the file name: mbox-short.txt
-Average spam confidence: 0.7507185185185187 MY
-Average spam confidence: 0.750718518519 ANSWER IN BOOK
+Average spam confidence: 0.7507185185185187    ANSWER IN MY PROGRAM
+Average spam confidence: 0.750718518519    ANSWER IN BOOK
 
 
 Enter the file name: mbox.txt
-Average spam confidence: 0.894128046745 ANSWER IN BOOK
-Average spam confidence: 0.8941280467445736 MY
+Average spam confidence: 0.894128046745    ANSWER IN BOOK
+Average spam confidence: 0.8941280467445736    ANSWER IN MY PROGRAM
 """
 
 

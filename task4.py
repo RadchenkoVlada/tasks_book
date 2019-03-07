@@ -1,3 +1,8 @@
+"""
+Exersise:
+Enter 5 words and count the length of each word.
+"""
+
 def task4():
     words = []
     length_words = []
@@ -8,8 +13,6 @@ def task4():
         length_words.append(length_word)
 
     return words, length_words
-
-
 
 
 if __name__ == '__main__':

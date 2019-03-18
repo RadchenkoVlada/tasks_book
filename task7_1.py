@@ -34,4 +34,4 @@ def opening_file(name_file):
 
 
 if __name__ == '__main__':
-    opening_file("mbox.txt")
+    opening_file("mbox-short.txt")

@@ -8,13 +8,13 @@ pull apart the line to extract the floating-point number on the line.
 Count these lines and then compute the total of the spam confidence values from these lines.
 When you reach the end of the file, print out the average spam confidence.
 
-Enter the file name: mbox.txt
+Enter the file name: mbox-short.txt
 
 Average spam confidence: 0.894128046745
 
 Enter the file name: mbox-short.txt
 Average spam confidence: 0.750718518519
-Test your file on the mbox.txt and mbox-short.txt files.
+Test your file on the mbox-short.txt and mbox-short.txt files.
 """
 
 def opening_file(name_file):
@@ -56,7 +56,7 @@ Average spam confidence: 0.7507185185185187    ANSWER IN MY PROGRAM
 Average spam confidence: 0.750718518519    ANSWER IN BOOK
 
 
-Enter the file name: mbox.txt
+Enter the file name: mbox-short.txt
 Average spam confidence: 0.894128046745    ANSWER IN BOOK
 Average spam confidence: 0.8941280467445736    ANSWER IN MY PROGRAM
 """

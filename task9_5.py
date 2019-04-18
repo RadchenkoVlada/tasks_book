@@ -11,7 +11,6 @@ Enter a file name: mbox-short.txt
 
 
 """
-import re
 
 
 def record_the_domain_name(filename):
@@ -21,19 +20,14 @@ def record_the_domain_name(filename):
             if line[:5] == "From ":
                 word_list = line.split()
                 email = word_list[1]
-                # s.find(), s.rfind(). Они возвращают индексы первого и последнего вхождения искомой подстроки.
-                #  Если же подстрока не найдена, то метод возвращает значение -1.
-                domain = email[email.find("@"):]
-                if domain not in dictionary:
-                    dictionary[domain] = dictionary.get(domain, 1)
+                # s.find(), s.rfind(). They return the indices of the first and last occurrence of the required
+                # substring.
+                # If the substring is not found, the method returns the value -1.
+                domain = email[email.find("@")+1:]
+                if domain in dictionary:
+                    dictionary[domain] += 1
                 else:
-                    dictionary[domain] = dictionary.get(domain) + 1
-
-        return dictionary
-
-
-        for key in dictionary:
-            print(key, dictionary[key])
+                    dictionary[domain] = 1
 
         return dictionary
 

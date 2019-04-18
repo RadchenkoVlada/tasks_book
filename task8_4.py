@@ -32,12 +32,10 @@ def opening_file(name_file):
                         continue
                     else:
                         new_list.append(word)
-            # print("New list:", new_list)
             sorted_list = sorted(new_list)
             print("Sorted list:", sorted_list)
-    except:
+    except IOError:
         print('File {0}'.format(name_file), "cannot be opened:")
-        exit()
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 # Tasks from book "Python for everybody" by Charles R. Severance
 
 There are completed tasks from the book that I found and read on "coursera"
-on the Programming for Everybody (Getting Started with Python) course.
+on the Programming for Everybody (Getting Started with Python) and Python data structures courses.
 
 Assignments were taken from chapters 1-10 inclusive.
 

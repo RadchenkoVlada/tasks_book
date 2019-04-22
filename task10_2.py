@@ -29,8 +29,9 @@ def time_of_day(filename):
             if line[:5] == "From ":
                 word_list = line.split()
                 exact_time = word_list[5]
-                # s.find(), s.rfind(). Они возвращают индексы первого и последнего вхождения искомой подстроки.
-                #  Если же подстрока не найдена, то метод возвращает значение -1.
+                # s.find(), s.rfind(). They return the indices of the first and last occurrence of the required
+                # substring.
+                # If the substring is not found, the method returns the value -1.
                 hour = exact_time[:exact_time.find(":")]
                 if hour not in dictionary:
                     dictionary[hour] = dictionary.get(hour, 1)
@@ -44,8 +45,6 @@ def time_of_day(filename):
 
         for key, val in t[:]:
             print(key, val)
-        #  как бы это красиво вывести?
-        #  без принта и без None at the end of the programm
 
 
 if __name__ == '__main__':

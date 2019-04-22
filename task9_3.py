@@ -30,7 +30,7 @@ zqian@umich.edu 195
 
 
 """
-# PyCharm | Preferences | Editor | General | Code Completion  хз не нашла я, капецушки
+
 
 def find_an_email(filename):
     with open(filename, "r") as file:
@@ -43,35 +43,22 @@ def find_an_email(filename):
                     dictionary[email] = dictionary.get(email, 1)
                 else:
                     dictionary[email] = dictionary.get(email) + 1
-        # this line is created to check the answer
 
         for key in dictionary:
             print(key, dictionary[key])
         # maximum = max(dictionary, key=dictionary.get)
         """
-        Ключ должен работать с элементами dict (т.е. Парами ключ-значение). Затем, используя второй элемент элемента
-        в качестве ключа max (в отличие от ключа dict), вы можете легко извлечь самое высокое значение и связанный
-        с ним ключ.
+        The key should work with dict elements (i.e. Key-value pairs). Then, using the second element of the element
+        as the max key (unlike the dict key), you can easily extract the highest value and the associated
+        with him the key.
         """
         maximum = max(dictionary.items(), key=lambda k: k[1])
         # maximum = max(dictionary.values())
 
-        # def keywithmaxval(d):
-        #     """ a) create a list of the dict keys and values;
-        #         b) return the key with the max value
-        #     """
-        #     # The method index() returns the lowest index in list that obj appears.
-        #     # че то через жопу как-то
-        #     v = list(d.values())
-        #     k = list(d.keys())
-        #     return k[v.index(max(v))]
-        # print("Who has the most messages: ", keywithmaxval(dictionary))
-
         print("Who has the most messages: ", maximum)
         return dictionary
 
-# http://qaru.site/questions/388565/parsing-from-addresses-from-email-text
+
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    # in my opinion it's hardcode, but it works
     print(find_an_email("mbox-short.txt"))

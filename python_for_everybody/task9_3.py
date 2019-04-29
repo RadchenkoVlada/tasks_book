@@ -3,7 +3,7 @@ Exercise 3:
 Write a program to read through a mail log, build a histogram using a dictionary
 to count how many messages have come from each email address, and print the dictionary.
 
-Enter file name: mbox-short.txt
+Enter file name: mbox.txt
 
 {'gopal.ramasammycook@gmail.com': 1,
 'louis@media.berkeley.edu': 3,
@@ -23,7 +23,7 @@ After all the data has been read and the dictionary has been created,look throug
 using a maximum loop (see Section [maximumloop]) to find who has the most messages and print
 how many messages the person has.
 
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 cwen@iupui.edu 5
 Enter a file name: mbox.txt
 zqian@umich.edu 195
@@ -61,4 +61,4 @@ def find_an_email(filename):
 
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    print(find_an_email("mbox-short.txt"))
+    print(find_an_email("mbox.txt"))

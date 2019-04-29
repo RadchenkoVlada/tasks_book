@@ -9,7 +9,7 @@ Sample Line:
 
 Sample Execution:
 python dow.py
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
 """
 
@@ -31,4 +31,4 @@ def find_a_day(filename):
 
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    print(find_a_day("mbox-short.txt"))
+    print(find_a_day("mbox.txt"))

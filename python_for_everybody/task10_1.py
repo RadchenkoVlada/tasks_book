@@ -7,7 +7,7 @@ from the dictionary. Then sort the list in reverse order and print out the perso
 Sample Line:
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 cwen@iupui.edu 5
 
 Enter a file name: mbox.txt

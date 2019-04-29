@@ -5,7 +5,7 @@ the mail came from (i.e.,the whole email address). At the end of the program, pr
 
 python schoolcount.py
 
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 {'media.berkeley.edu': 4, 'uct.ac.za': 6, 'umich.edu': 7,
 'gmail.com': 1, 'caret.cam.ac.uk': 1, 'iupui.edu': 8}
 
@@ -34,4 +34,4 @@ def record_the_domain_name(filename):
 
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    print(record_the_domain_name("mbox-short.txt"))
+    print(record_the_domain_name("mbox.txt"))

@@ -12,7 +12,7 @@ then you will also count the number of From (not From:) lines and print out a co
 This is a good sample output with a few lines removed:
 
 python fromcount.py
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 stephen.marquard@uct.ac.za
 louis@media.berkeley.edu
 zqian@umich.edu
@@ -49,4 +49,4 @@ def find_a_sender(filename):
 
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    find_a_sender("mbox-short.txt")
+    find_a_sender("mbox.txt")

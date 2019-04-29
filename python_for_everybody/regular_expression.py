@@ -7,7 +7,7 @@ of the numbers and print out the average.
 Enter file:mbox.txt
 38549.7949721
 
-Enter file:mbox-short.txt
+Enter file:mbox.txt
 39756.9259259
 """
 import re
@@ -20,7 +20,7 @@ def average_of_numbers(filename):
     with open(filename, "r") as file:
         for line in file:
             line = line.rstrip()
-            one_elem = re.findall('^New.*: ([0-9.]+)', line)
+            one_elem = re.findall('^New.*: ([0-9]+)', line)
             if len(one_elem) > 0:
                 number = int(one_elem[0])
                 sum_all += number

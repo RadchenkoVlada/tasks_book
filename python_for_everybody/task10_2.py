@@ -6,7 +6,7 @@ Once you have accumulated the counts for each hour, print out the counts, one pe
 
 Sample Execution:
 python timeofday.py
-Enter a file name: mbox-short.txt
+Enter a file name: mbox.txt
 04 3
 06 1
 07 1
@@ -49,4 +49,4 @@ def time_of_day(filename):
 
 if __name__ == '__main__':
     # filename = input("Enter a file name: ")
-    print(time_of_day("mbox-short.txt"))
+    print(time_of_day("mbox.txt"))

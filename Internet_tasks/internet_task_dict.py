@@ -36,8 +36,8 @@ N: Самое частое слово
 Дан текст. Выведите слово, которое в этом тексте встречается чаще всего. Если таких слов несколько, выведите то,
 которое меньше в лексикографическом порядке.
 
-Test from softserve
 
+TEST from softserve
 name: parse_number()
 Please provide full program code of function which returns the dict with following structure: {odd: number of odd digits
 in input value, even: number of even digits of input value} or false when wrong input value.

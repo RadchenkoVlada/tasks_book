@@ -34,12 +34,13 @@ Make an instance of the User class and call increment_login_attempts() several t
 to make sure it was incremented properly, and then call reset_login_attempts(). Print login_attempts again to make sure
 it was reset to 0
 """
+import re
 
 
 class Restaurant:
     """A simple attempt to model a restaurant."""
 
-    def __init__(self, name="Name", cuisine_type="no cuisine"):
+    def __init__(self, name="Uno", cuisine_type="italian"):
         """Initialize name and type attributes."""
         self.name = name
         self.cuisine_type = cuisine_type
@@ -64,7 +65,7 @@ class Restaurant:
 
 
 class User:
-    def __init__(self, fist_name="Name", last_name="Surname", tel_number=0, sex="unknown"):
+    def __init__(self, fist_name="Anna", last_name="Timchenko", tel_number="0678234672", sex="female"):
         self.first_name = fist_name
         self.last_name = last_name
         self.tel_number = tel_number
@@ -90,6 +91,13 @@ class User:
         self.login_attempts = 0
         print("Reset, now login attempts = ", self.login_attempts)
 
+    def valid_tel(self):
+        correct_number = re.match("^0*[0-9]{10}$", self.tel_number)
+        if correct_number is None:
+            return False
+        else:
+            return correct_number.group(0)
+
 
 
 if __name__ == '__main__':
@@ -99,7 +107,7 @@ if __name__ == '__main__':
     # second_res = Restaurant("samurai", "japanese")
     # print(second_res.describe_restaurant())
     # print(second_res.open_restaurant())
-    # restaurant = Restaurant()
+    # restaurant = Restaurant("My rest", "ukr")
     # print("The number of customers the restaurant has served", restaurant.number_served)
     # restaurant.number_served = 5
     # print("The number of customers the restaurant has served", restaurant.number_served)
@@ -109,15 +117,18 @@ if __name__ == '__main__':
     print("*******************")
     u1 = User()
     u1.greet_user()
-    u2 = User("vlada", "radchenko", 123445, "female")
+    u2 = User("vlada", "radchenko", "123445", "female")
     u2.greet_user()
     u2.describe_user()
-    u3 = User("arnold", "ivanov", 3437273, "male")
-    u3.tel_number = 1111111
+    u3 = User("arnold", "ivanov", "3437273", "male")
+    u3.tel_number = "1111111"
     u3.describe_user()
-    new_user = User("Peter", "English")
-    new_user.increment_login_attempts()
-    new_user.increment_login_attempts()
-    new_user.increment_login_attempts()
-    new_user.reset_login_attempts()
-
+    print(u3.valid_tel())
+    u4 = User()
+    print(u4.valid_tel())
+    # new_user = User("Peter", "English")
+    # new_user.increment_login_attempts()
+    # new_user.increment_login_attempts()
+    # new_user.increment_login_attempts()
+    # new_user.reset_login_attempts()
+    #

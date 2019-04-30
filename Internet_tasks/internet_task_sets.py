@@ -137,25 +137,29 @@ def different_words_text(name_file):
 
 
 def guess_the_number():
+    # random.seed(0)
     input_number = random.randint(0, 10)
     print("It is a secret! Hush! A hidden number:", input_number)
     print("The max number in which the hidden number is:", 10)
     output_set = set()
+    black_set = set()
+    bad_numbers = set()
     for i in range(10):
         input_set = set([random.randint(0, 10) for _ in range(10)])
         print(" ".join(map(str, input_set)))
-        output_set.update(input_set)
+        if i == 0:
+            output_set.update(input_set)
         if input_number in input_set:
             print("Yes\n")
             output_set = input_set & output_set
-            print("Output set", output_set)
+            output_set -= bad_numbers
+            # print("Output set", output_set)
         else:
             print("No\n")
-            output_set -= input_set  # The result of the difference is a set containing elements that are in
-            # the "decreasing", but they are not in the "deductible"
-            print("Output set", output_set)
+            output_set -= input_set
+            bad_numbers = black_set.union(input_set)
     print("Help!")
-    truthful_output = list(output_set)
+    truthful_output = list(output_set - bad_numbers)
     sorted_truthful_output = sorted(truthful_output)
     return " ".join(map(str, sorted_truthful_output))
 

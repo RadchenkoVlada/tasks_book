@@ -2,16 +2,6 @@
 Task from "PYTHON CRASH COURSE" by Eric Matthes
 Chapter 9 - Classes
 
-9-1. Restaurant: Make a class called Restaurant.
-The __init__() method for Restaurant should store two attributes:
-a restaurant_name and a cuisine_type.
- Make a method called describe_restaurant() that prints these two pieces of
-information, and a method called open_restaurant() that prints a message indicating that the restaurant is open.
-Make an instance called restaurant from your class. Print the two attributes individually, and then call both methods.
-
-9-2. Three Restaurants: Start with your class from Exercise 9-1. Create three different instances from the class, and
-call describe_restaurant() for each instance.
-
 9-3. Users: Make a class called User. Create two attributes called first_name and last_name, and then create several
 other attributes that are typically stored in a user profile. Make a method called describe_user() that prints a summary
 of the user’s information. Make another method called greet_user() that prints a personalized greeting to the user.
@@ -33,35 +23,19 @@ reset_login_attempts() that resets the value of login_ attempts to 0.
 Make an instance of the User class and call increment_login_attempts() several times. Print the value of login_attempts
 to make sure it was incremented properly, and then call reset_login_attempts(). Print login_attempts again to make sure
 it was reset to 0
+
+9-7. Admin: An administrator is a special kind of user. Write a class called Admin that inherits from the User class you
+wrote in Exercise 9-3 (page 166)
+or Exercise 9-5 (page 171). Add an attribute, privileges, that stores a list
+of strings like "can add post", "can delete post", "can ban user", and so on. Write a method called show_privileges()
+that lists the administrator’s set of privileges. Create an instance of Admin, and call your method.
+
+9-8. Privileges: Write a separate Privileges class. The class should have one attribute, privileges, that stores a list
+of strings as described in Exercise 9-7. Move the show_privileges() method to this class. Make a Privileges instance as
+an attribute in the Admin class. Create a new instance of Admin and use your method to show its privileges.
+
 """
 import re
-
-
-class Restaurant:
-    """A simple attempt to model a restaurant."""
-
-    def __init__(self, name="Uno", cuisine_type="italian"):
-        """Initialize name and type attributes."""
-        self.name = name
-        self.cuisine_type = cuisine_type
-        self.number_served = 0
-
-    def describe_restaurant(self):
-        """Prints a message indicating that the restaurant is open"""
-        print("The restaurant is called", self.name.title() + ".")
-        print("The restaurant serves", self.cuisine_type, "cuisine.")
-
-    def open_restaurant(self):
-        print("The restaurant ", self.name.title(), "is opened!")
-
-    def set_number_served(self, customers):
-        """lets you set the number of customers that have been served"""
-        self.number_served = customers
-
-    def increment_number_served(self, customers):
-        """increment the number of customers who’ve been served"""
-        self.number_served += customers
-        print("The number of customers the restaurant has served", self.number_served, "in Wednesday")
 
 
 class User:
@@ -99,22 +73,22 @@ class User:
             return correct_number.group(0)
 
 
+class Admin(User):
+    def __init__(self, fist_name, last_name, tel_number, sex):
+        super().__init__(fist_name, last_name, tel_number, sex)
+        self.privileges = Privileges()
+
+
+class Privileges:
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        print("These privileges can do admin: " + str(self.privileges))
+
 
 if __name__ == '__main__':
-    # first_res = Restaurant("paprika", "italian")
-    # print(first_res.describe_restaurant())
-    # print(first_res.open_restaurant())
-    # second_res = Restaurant("samurai", "japanese")
-    # print(second_res.describe_restaurant())
-    # print(second_res.open_restaurant())
-    # restaurant = Restaurant("My rest", "ukr")
-    # print("The number of customers the restaurant has served", restaurant.number_served)
-    # restaurant.number_served = 5
-    # print("The number of customers the restaurant has served", restaurant.number_served)
-    # restaurant.set_number_served(56)
-    # print("The number of customers the restaurant has served", restaurant.number_served)
-    # restaurant.increment_number_served(4)
-    print("*******************")
+
     u1 = User()
     u1.greet_user()
     u2 = User("vlada", "radchenko", "123445", "female")
@@ -131,4 +105,7 @@ if __name__ == '__main__':
     new_user.increment_login_attempts()
     new_user.increment_login_attempts()
     new_user.reset_login_attempts()
+    print("*******************")
+    user = Admin("Vasya", "Ivanov", "0507678712", "male")
+    user.privileges.show_privileges()
     #

@@ -1,0 +1,11 @@
+An Inside Look at the History of the Internet
+
+This session looks at the history of the Internet and World-Wide-Web paying particular attention to some of the moments
+ where it was not assured that things were going to work out and produce the user experience we have today.
+ Via video interviews, we meet a number of the innovators of the Internet and World-Wide-Web and focus on what might
+ have happened if things had not worked out the way they did. While much of the research in Internet protocols and
+ technologies was very deliberate, until 1994 it was not clear that either the Internet nor the World-Wide-Web had
+ any purpose beyond connecting academics, scientists, and computer scientists. In many ways, both the Internet and
+  World-Wide-Web were lab experiments that escaped into the wild. We look at those moments where the lab experiments
+  escaped and imagine possible alternate realities if things had turned out differently.
+

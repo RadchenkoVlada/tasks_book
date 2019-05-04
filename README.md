@@ -1,5 +1,3 @@
-# Tasks from books "Python for everybody" by Charles R. Severance
-
 There are completed tasks from the book called "Python for everybody" by Charles R. Severance that 
 I found and read on the site "coursera" on the "Programming for Everybody (Getting Started with Python)" 
 and "Python data structures" courses.

@@ -28,9 +28,9 @@ while True:
     if (len(data) < 1) or count >= 3000:
         break
     count = count + len(data)
-    print(data.decode)
+    print(data.decode("utf-8"))
 
 mysock.close()
-print("The count of the number of characters is ", count)
+print("The number of characters is ", count)
 
 #

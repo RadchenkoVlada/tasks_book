@@ -10,7 +10,7 @@ import socket
 from urllib.error import HTTPError
 
 try:
-    user_url = input("Enter url: ")
+    user_url = input("Enter url: ").strip()
     host = user_url.split("/")[2]
     mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     mysock.connect((host, 80))

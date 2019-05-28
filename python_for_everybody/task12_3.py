@@ -5,4 +5,28 @@ Exercise 3:
  exercise, simply show the first 3000 characters of the document contents.
 
 """
+import urllib.request
+import urllib.error
+
+
+# user_url = input("Enter url: ")
+# test address
+user_url = "http://data.pr4e.org/romeo.txt"
+fhand = urllib.request.urlopen(user_url)
+count = 0
+characters = 0
+for line in fhand:
+    words = line.decode()
+    if characters < 3000:
+        print(words.strip())
+
+    characters += len(words)
+print("\nThe number of characters is ", characters)
+
 #
+
+
+
+
+
+

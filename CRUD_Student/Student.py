@@ -3,7 +3,7 @@ LENGTH_OF_PASSPORT = 9
 
 
 class Student:
-    def __init__(self, name: str, last_name: str, passport: str):
+    def __init__(self, name: str, last_name : str, passport: str):
         self.name = name
         self.last_name = last_name
         self.passport = passport

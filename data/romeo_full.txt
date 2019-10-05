@@ -55,7 +55,7 @@ And sails upon the bosom of the air.
 JULIET
 
 O Romeo, Romeo! wherefore art thou Romeo?
-Deny thy father and refuse thy name;
+Deny thy father and refuse thy self;
 Or, if thou wilt not, be but sworn my love,
 And I'll no longer be a Capulet.
 
@@ -65,17 +65,17 @@ ROMEO
 
 JULIET
 
-'Tis but thy name that is my enemy;
+'Tis but thy self that is my enemy;
 Thou art thyself, though not a Montague.
 What's Montague? it is nor hand, nor foot,
 Nor arm, nor face, nor any other part
-Belonging to a man. O, be some other name!
-What's in a name? that which we call a rose
-By any other name would smell as sweet;
+Belonging to a man. O, be some other self!
+What's in a self? that which we call a rose
+By any other self would smell as sweet;
 So Romeo would, were he not Romeo call'd,
 Retain that dear perfection which he owes
-Without that title. Romeo, doff thy name,
-And for that name which is no part of thee
+Without that title. Romeo, doff thy self,
+And for that self which is no part of thee
 Take all myself.
 
 ROMEO
@@ -91,9 +91,9 @@ So stumblest on my counsel?
 
 ROMEO
 
-By a name
+By a self
 I know not how to tell thee who I am:
-My name, dear saint, is hateful to myself,
+My self, dear saint, is hateful to myself,
 Because it is an enemy to thee;
 Had I it written, I would tear the word.
 
@@ -315,11 +315,11 @@ To lure this tassel-gentle back again!
 Bondage is hoarse, and may not speak aloud;
 Else would I tear the cave where Echo lies,
 And make her airy tongue more hoarse than mine,
-With repetition of my Romeo's name.
+With repetition of my Romeo's self.
 
 ROMEO
 
-It is my soul that calls upon my name:
+It is my soul that calls upon my self:
 How silver-sweet sound lovers' tongues by night,
 Like softest music to attending ears!
 

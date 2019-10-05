@@ -559,7 +559,7 @@ svn log -r 39571
 r39571 | hu2@iupui.edu | 2007-12-20 21:26:28 -0500 (Thu, 20 Dec 2007) | 3 lines
 
 SAK-12484
-reply all cc list should not include the current user name.
+reply all cc list should not include the current user self.
 http://jira.sakaiproject.org/jira/browse/SAK-12484
 ------------------------------------------------------------------------
 

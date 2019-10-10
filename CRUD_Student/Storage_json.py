@@ -21,3 +21,4 @@ class StorageJSON(Storage):
     @staticmethod
     def trans(d):
         return Student(d["_name"], d["_last_name"], d["_passport"])
+

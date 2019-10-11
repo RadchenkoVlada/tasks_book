@@ -40,7 +40,29 @@ def integer17(number):
         raise ValueError("number should be > 999")
 
 
+def integer21(seconds):
+    """С начала суток прошло N секунд (N — целое). Найти количество секунд, прошедших с начала последней минуты.
+    :return: int
+    """
+    return seconds % 60
 
+
+def integer24(k):
+    """Дни недели пронумерованы следующим образом: 0 — воскресенье, 1 — понедельник, 2 — вторник, ..., 6 — суббота.
+    Дано целое число K, лежащее в диапазоне 1–365. Определить номер дня недели для K-го дня года, если известно, что в
+    этом году 1 января было понедельником.
+    :
+    :return: str - day of the week depending on the number k
+    :except: ValueError if number k not in range of 1 to 365
+
+    You can find a calendar in folder - "data" to check the given number "k"
+    """
+    days_of_the_week = {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"}
+    if 1 <= k <= 365:
+        answer = k % 7
+        return type(days_of_the_week[answer])
+    else:
+        raise ValueError("Number k should be in range of 1 to 365")
 
 
 if __name__ == '__main__':
@@ -49,3 +71,9 @@ if __name__ == '__main__':
     print(integer8(95))
 
     print(integer17(1200))
+
+    print(integer21(121))
+
+    print(integer24(23))
+
+#

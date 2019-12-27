@@ -52,28 +52,55 @@ def integer24(k):
     Дано целое число K, лежащее в диапазоне 1–365. Определить номер дня недели для K-го дня года, если известно, что в
     этом году 1 января было понедельником.
     :
-    :return: str - day of the week depending on the number k
-    :except: ValueError if number k not in range of 1 to 365
+    :return: str - day of the week depending on the number day_year
+    :except: ValueError if number day_year not in range of 1 to 365
 
-    You can find a calendar in folder - "data" to check the given number "k"
+    You can find a calendar in folder - "data" to check the given number "day_year"
     """
     days_of_the_week = {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat"}
     if 1 <= k <= 365:
         answer = k % 7
-        return type(days_of_the_week[answer])
+        return days_of_the_week[answer]
     else:
-        raise ValueError("Number k should be in range of 1 to 365")
+        raise ValueError("Number day_year should be in range of 1 to 365")
 
+
+def get_day_of_week_str(num):
+    days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    return days_of_week[num-1]
+
+
+
+
+def integer28(day_week, day_year):
+    """Дни недели пронумерованы следующим образом: 1 — понедельник, 2 — вторник, . . . , 6 — суббота,
+    7 — воскресенье. Дано целое число K, лежащее в диапазоне 1–365, и целое число N, лежащее в диапазоне 1–7.
+    Определить номер дня недели для K-го дня года, если известно, что в этом году 1 января было днем недели с номером N.
+    """
+    days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    # usual_days_of_the_week = {1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat", 7: "Sun"}
+    days_of_week_for_this_year = {}
+    keys = range(1, 8)
+    if 1 <= int(day_year) <= 365 and 1 <= int(day_week) <= 7:
+        for i in keys:
+            days_of_week_for_this_year[i] = days_of_week[(day_week + i - 1) % 7 - 1]
+        print(f"This year, the first week looks like this: {days_of_week_for_this_year} ")
+        answer = day_year % 7
+        return days_of_week_for_this_year[answer]
+    else:
+        raise ValueError("Number day_year should be in range of 1 to 365")
 
 if __name__ == '__main__':
-    print(integer7(12))
+    # print(integer7(12))
+    #
+    # print(integer8(95))
+    #
+    # print(integer17(1200))
+    #
+    # print(integer21(121))
+    #
+    # print(integer24(23))
 
-    print(integer8(95))
-
-    print(integer17(1200))
-
-    print(integer21(121))
-
-    print(integer24(23))
+    print(integer28(3, 18))  # For these numbers correct answer is - Saturday
 
 #

@@ -70,8 +70,6 @@ def get_day_of_week_str(num):
     return days_of_week[num-1]
 
 
-
-
 def integer28(day_week, day_year):
     """Дни недели пронумерованы следующим образом: 1 — понедельник, 2 — вторник, . . . , 6 — суббота,
     7 — воскресенье. Дано целое число K, лежащее в диапазоне 1–365, и целое число N, лежащее в диапазоне 1–7.
@@ -90,6 +88,22 @@ def integer28(day_week, day_year):
     else:
         raise ValueError("Number day_year should be in range of 1 to 365")
 
+
+def integer29(a, b, c):
+    """Даны целые положительные числа a, b, c. На прямоугольнике размера a × b размещено максимально возможное
+    количество квадратов со стороной c (без наложений). Найти количество квадратов, размещенных на прямоугольнике,
+     а также площадь незанятой части прямоугольника.
+    """
+    if c <= a and c <= b:
+        rectangle_area = a * b
+        square_count = (a//c)*(b//c)
+        square_area = c ** 2
+        remaining_area = rectangle_area - square_area * square_count
+        return square_count, remaining_area
+    else:
+        raise ValueError("Number c must be less or equal than a or b ")
+
+
 if __name__ == '__main__':
     # print(integer7(12))
     #
@@ -100,7 +114,10 @@ if __name__ == '__main__':
     # print(integer21(121))
     #
     # print(integer24(23))
+    #
+    # print(integer28(3, 18))  # For these numbers correct answer is - Saturday
 
-    print(integer28(3, 18))  # For these numbers correct answer is - Saturday
+    count_square, area_remaining = integer29(3, 2, 1)
+    print(f"Number of square(s) - {count_square}, unallocated area of ​​the rectangle - {area_remaining}")
 
 #

@@ -97,7 +97,7 @@ if __name__ == '__main__':
     # print(boolean21(121))
     # print(boolean31(0, 2, 4))
     # print(boolean34(2, 8))
-    print(boolean39(2, 2, 3, 2))
+    print(boolean39(2, 2, 5, 5))
 
 
 #

@@ -96,16 +96,63 @@ def task_3(input):
             if list_of_words[index_].istitle():
                 answer.append(list_of_words[index_])
 
+    # Deleting duplicates in the list
     answer = list(set(answer))
     len_answer = len(answer)
     return f"There are {len_answer} proper name(s): {answer}"
+
+
+def task_4(input):
+    """4.
+     Convert a text into "todo list" sentence by sentence. Use '-' symbol for start and ';' for end of all lines except
+        the last one and use '.' for the last one.
+        Input: I like to write code. I am the best programmer. Learning is light and ignorance is darkness.
+        Output:
+        - I like to write code;
+        - I am the best programmer;
+        - Learning is light and ignorance is darkness.
+    """
+    answer = []
+    sentenses = input.split(".")
+    if not sentenses[-1]:
+        sentenses.pop()
+    for index in range(len(sentenses)):
+        if index == (len(sentenses) - 1):
+            sentenses[-1] = "- " + sentenses[-1] + "."
+            print(sentenses[index])
+        else:
+            sentenses[index] = "- " + sentenses[index].strip() + ";"
+            print(sentenses[index])
+
+
+def task_5(input):
+    """
+    5. Find the position of the given word in the text and in the sentence. Word to search is the second input.
+    Input: You like to write code. I am the best programmer ana you too. You are perfect.
+    you
+
+    Output:
+    3 entry of word 'you' has been found:
+    - sentence 1 word 3. Position in the text: word 3 character 8.
+    - sentence 2 word 1. Position in the text: word 4 character 12.
+    - sentence 3 word 1. Position in the text: word 8 character 31.
+
+
+    Notes:
+    The first sentence is easy.
+    'You' is not much input 'you' in the second and the third sentences but must be found by your program.
+    In the fourth sentence word 'Your' contains a part of word 'You'. It shouldn't be detected.
+    :return:
+    """
+    pass
 
 
 if __name__ == '__main__':
     # print(task_0("I love you. You are the best. Our life is cool."))
     # print(task_1("I love you. You are the best. Ooour life is cool."))
     # print(task_2("My uncle. What a worthy man. Falling ill like that. And dying."))
-    print(task_3("I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv."))
+    # print(task_3("I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv."))
+    task_4(" I like to write code. I am the best programmer. Learning is light and ignorance is darkness.")
     # task_1("I love you. You are the best. Our life is cool." * 10000000)
     # print(timeit.timeit("task_0(\"I love you. You are the best. Our life is cool.\")",globals=globals()))
     # print(timeit.timeit("task_1(\"I love you. You are the best. Our life is cool.\")", globals=globals()))

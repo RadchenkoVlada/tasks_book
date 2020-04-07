@@ -1,5 +1,3 @@
-import timeit
-
 def task_0(input):
     """Task:
     0. Replace letter 'o' to 'a'
@@ -25,16 +23,16 @@ def task_1(input):
     output = input.split()
     for i in range(len(output)):
         if (i % 2) == 1:
-            if 'O' in output[i] or 'o' in output[i]:
-                word = output[i].replace('O', 'A')
-                output[i] = word
-                if 'o' in output[i]:
-                    word = output[i].replace('o', 'a')
-                    output[i] = word
+            if 'O' in output[ i ] or 'o' in output[ i ]:
+                word = output[ i ].replace('O', 'A')
+                output[ i ] = word
+                if 'o' in output[ i ]:
+                    word = output[ i ].replace('o', 'a')
+                    output[ i ] = word
     return ' '.join(output)
 
 
-def task_2(input):
+def task_2 (input):
     """
     2. Reverse the words order in the text. Capital letters and dots should be correct.
     Example:
@@ -61,21 +59,21 @@ def task_2(input):
 
     processed_input = " ".join(l)
 
-    def reverse_words(string):
+    def reverse_words (string):
         input_words = string.split(" ")
         '''
         first is -1 that means start from last element
         second argument is empty that means move to end of list
         third arguments is difference of steps
         '''
-        to_reverse_words = input_words[-1::-1]
+        to_reverse_words = input_words[ -1::-1 ]
         result = " ".join(to_reverse_words)
         return result
 
     return reverse_words(processed_input)
 
 
-def task_3(input):
+def task_3 (input):
     """
     3. Find and print out all names in the text (the word starting with capital letter but not start of the sentence) and the numbers of these words.
     Example:
@@ -83,14 +81,14 @@ def task_3(input):
     Output: Vlada, Radchenko, Kharkiv
     :type input: str
     """
-    answer = []
-    sentenses = input.split(".")
-    if not sentenses[-1]:
-        sentenses.remove(sentenses[-1])
+    answer = [ ]
+    sentences = input.split(".")
+    if not sentences[ -1 ]:
+        sentences.remove(sentences[ -1 ])
 
-    for index in range(len(sentenses)):
-        sentenses[index] = sentenses[index].strip()
-        list_of_words = sentenses[index].split(" ")
+    for index in range(len(sentences)):
+        sentences[ index ] = sentences[ index ].strip()
+        list_of_words = sentences[ index ].split(" ")
         for index_ in range(1, len(list_of_words)):
 
             if list_of_words[index_].istitle():
@@ -102,7 +100,7 @@ def task_3(input):
     return f"There are {len_answer} proper name(s): {answer}"
 
 
-def task_4(input):
+def task_4(input: str):
     """4.
      Convert a text into "todo list" sentence by sentence. Use '-' symbol for start and ';' for end of all lines except
         the last one and use '.' for the last one.
@@ -113,38 +111,99 @@ def task_4(input):
         - Learning is light and ignorance is darkness.
     """
     answer = []
-    sentenses = input.split(".")
-    if not sentenses[-1]:
-        sentenses.pop()
-    for index in range(len(sentenses)):
-        if index == (len(sentenses) - 1):
-            sentenses[-1] = "- " + sentenses[-1] + "."
-            print(sentenses[index])
+    sentences = input.split(".")
+    if not sentences[-1]:
+        sentences.pop()
+    for index in range(len(sentences)):
+        if index == (len(sentences) - 1):
+            sentences[-1] = "- " + sentences[-1] + "."
+            print(sentences[index])
         else:
-            sentenses[index] = "- " + sentenses[index].strip() + ";"
-            print(sentenses[index])
+            sentences[index] = "- " + sentences[index].strip() + ";"
+            print(sentences[index])
 
 
-def task_5(input):
+def task_5(phrase: str):
     """
-    5. Find the position of the given word in the text and in the sentence. Word to search is the second input.
-    Input: You like to write code. I am the best programmer ana you too. You are perfect.
+    5. Find the position of the given word in the text and in the sentence.
+    Word to search is the second input. Position of word in the text countdown from the beginning of the text.
+    Input: You like to write code. I am the best programmer and you too. You are perfect.
     you
 
     Output:
     3 entry of word 'you' has been found:
-    - sentence 1 word 3. Position in the text: word 3 character 8.
-    - sentence 2 word 1. Position in the text: word 4 character 12.
-    - sentence 3 word 1. Position in the text: word 8 character 31.
+    - sentence 1 word 1. Position in the text: word 1 character 1.
+    - sentence 2 word 7. Position in the text: word 12 character 51.
+    - sentence 3 word 1. Position in the text: word 14 character 60.
 
 
     Notes:
     The first sentence is easy.
-    'You' is not much input 'you' in the second and the third sentences but must be found by your program.
+    'You' is not much input 'you' but must be found by your program.
     In the fourth sentence word 'Your' contains a part of word 'You'. It shouldn't be detected.
-    :return:
     """
-    pass
+    search_word = input("Please, enter the word you want to find\n")
+
+    sentence_word = dict()
+
+    lower_search_word = search_word.lower()
+    capital_search_word = search_word.title()
+
+    number_of_times_in_text = phrase.count(lower_search_word) + phrase.count(capital_search_word)
+
+    print(f"{number_of_times_in_text} entry of word '{search_word}' has been found:\t")
+
+    # Searching the position of word in the text countdown from the beginning of the text.
+    search_pos = 0
+    l_position_in_text = []
+
+    found_lower = phrase.find(lower_search_word, search_pos)
+    while found_lower != -1:
+        search_pos = found_lower + len(search_word)
+        l_position_in_text.append(found_lower + 1)
+        found_lower = phrase.find(lower_search_word, search_pos)
+
+    search_pos = 0
+    while True:
+        found_capital = phrase.find(capital_search_word, search_pos)
+        if found_capital != -1:
+            search_pos = found_capital + len(search_word)
+            l_position_in_text.append(found_capital + 1)
+        else:
+            break
+    l_position_in_text.sort()
+    print(f"Position in the text of character word '{search_word}' :{l_position_in_text}")
+
+    sentences = phrase.split(".")
+    # removing the empty line at the end
+    if not sentences[-1]:
+        sentences.remove(sentences[-1])
+
+    # Searching the position of word in the input
+    without_dots = phrase.replace(".", "")
+
+    word_position_in_text = []
+    words_in_the_text = without_dots.split(' ')
+    for index in range(len(words_in_the_text)):
+        if words_in_the_text[index] == lower_search_word or words_in_the_text[index] == capital_search_word:
+            word_position_in_text.append(index + 1)
+    print(f"Position in the text of word '{search_word}' :{sorted(word_position_in_text)}")
+
+    # Searching the position in the sentence
+    for i in range(len(sentences)):
+        words = sentences[i].split()
+        l = []
+        for index in range(len(words)):
+            if words[index] == lower_search_word or words[index] == capital_search_word:
+                l.append(index + 1)
+        sentence_word[i + 1] = l
+
+    word_num = 0
+    for sentence, words_in_sentence in sentence_word.items():
+        for word in words_in_sentence:
+            print(f"-sentence {sentence} word {word} .Position in the text: word {word_position_in_text[word_num]} "
+                  f"character {l_position_in_text[word_num]}.", end="\n")
+            word_num += 1
 
 
 if __name__ == '__main__':
@@ -152,8 +211,5 @@ if __name__ == '__main__':
     # print(task_1("I love you. You are the best. Ooour life is cool."))
     # print(task_2("My uncle. What a worthy man. Falling ill like that. And dying."))
     # print(task_3("I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv."))
-    task_4(" I like to write code. I am the best programmer. Learning is light and ignorance is darkness.")
-    # task_1("I love you. You are the best. Our life is cool." * 10000000)
-    # print(timeit.timeit("task_0(\"I love you. You are the best. Our life is cool.\")",globals=globals()))
-    # print(timeit.timeit("task_1(\"I love you. You are the best. Our life is cool.\")", globals=globals()))
-    # print(timeit.timeit("task_2(\"My uncle. What a worthy man. Falling ill like that. And dying.\")", globals=globals()))
+    # task_4(" I like to write code. I am the best programmer. Learning is light and ignorance is darkness.")
+    task_5("You you you like to write You the Best code. I am the best programmer and you too. You are perfect.")

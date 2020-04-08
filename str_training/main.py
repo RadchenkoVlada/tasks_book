@@ -1,4 +1,4 @@
-def task_0(input):
+def task_0(input: str):
     """Task:
     0. Replace letter 'o' to 'a'
     Input: I love you. You are the best. Our life is cool.
@@ -6,13 +6,12 @@ def task_0(input):
            I lave yau. Yau are the best. Our life is caal.
 
     """
-    # print(type(input))
     out = input.replace('o', 'a')
     output = out.replace("O", "A")
     return output
 
 
-def task_1(input):
+def task_1(input: str):
     """
     1. Replace letter 'o' to 'a' in each second word (words with even number)
     Input: I love you. You are the best. Our life is cool.
@@ -32,7 +31,7 @@ def task_1(input):
     return ' '.join(output)
 
 
-def task_2 (input):
+def task_2 (input: str):
     """
     2. Reverse the words order in the text. Capital letters and dots should be correct.
     Example:
@@ -59,7 +58,7 @@ def task_2 (input):
 
     processed_input = " ".join(l)
 
-    def reverse_words (string):
+    def reverse_words(string: str):
         input_words = string.split(" ")
         '''
         first is -1 that means start from last element
@@ -73,7 +72,7 @@ def task_2 (input):
     return reverse_words(processed_input)
 
 
-def task_3 (input):
+def task_3 (input: str):
     """
     3. Find and print out all names in the text (the word starting with capital letter but not start of the sentence) and the numbers of these words.
     Example:

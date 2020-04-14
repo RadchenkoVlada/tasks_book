@@ -48,5 +48,5 @@ def find_a_sender(filename):
 
 
 if __name__ == '__main__':
-    # filename = input("Enter a file name: ")
-    find_a_sender("mbox.txt")
+    filename = input("Enter a file name: ")
+    # find_a_sender("mbox.txt")

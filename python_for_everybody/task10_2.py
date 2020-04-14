@@ -43,10 +43,11 @@ def time_of_day(filename):
 
         t.sort()
 
-        for key, val in t[:]:
+        for key, val in t:
             print(key, val)
 
 
 if __name__ == '__main__':
-    # filename = input("Enter a file name: ")
-    print(time_of_day("mbox.txt"))
+    filename = input("Enter a file name: ")
+    print(time_of_day(filename))
+    # print(time_of_day("data/mbox.txt"))

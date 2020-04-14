@@ -14,7 +14,7 @@ Average spam confidence: 0.894128046745
 
 Enter the file name: mbox.txt
 Average spam confidence: 0.750718518519
-Test your file on the mbox.txt and mbox.txt files.
+Test your file on the mbox.txt and mbox_long.txt files.
 
 
 Exercise 3: Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their
@@ -69,8 +69,8 @@ def opening_file(name_file):
 
 
 if __name__ == '__main__':
-    name_file = input("Enter a file name: ")
-    opening_file(name_file)
+    # name_file = input("Enter a file name: ")
+    opening_file("mbox.txt")
 
 """
 Correct answer:

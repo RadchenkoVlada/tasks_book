@@ -17,7 +17,6 @@ You can download the file from: www.py4e.com/code3/mbox.txt
 """
 
 
-
 def opening_file(name_file):
     try:
         with open(name_file, "r") as file:
@@ -34,4 +33,4 @@ def opening_file(name_file):
 
 
 if __name__ == '__main__':
-    opening_file("mbox.txt")
+    opening_file("data/mbox_long.txt")

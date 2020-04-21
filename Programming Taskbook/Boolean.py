@@ -3,10 +3,7 @@ import math
 
 def boolean10(a, b):
     """Даны два целых числа: A, B. Проверить истинность высказывания: «Ровно одно из чисел A и B нечетное»."""
-    if ((a+b) % 2) != 0:
-        return True
-    else:
-        return False
+    return ((a+b) % 2) != 0
 
 
 def boolean11(a, b):
@@ -60,21 +57,20 @@ def boolean31(a, b, c):
     """Даны целые числа a, b, c, являющиеся сторонами некоторого треугольника. Проверить истинность высказывания:
      «Треугольник со сторонами a, b, c является равнобедренным»
     """
-    # try:
     if a > 0 and b > 0 and c > 0:
         first_way = (a + b) > c and a == b
         second_way = (b + c) > a and b == c
         third_way = (c + a) > b and c == a
-        if first_way is not None:
+        if first_way:
             return True
-        elif second_way is not None:
+        elif second_way:
             return True
-        elif third_way is not None:
+        elif third_way:
             return True
+        else:
+            return False
     else:
         return False
-    # except ValueError:
-    #     print("It is impossible to create a triangle with these three numbers.")
 
 
 def boolean39(x1, y1, x2, y2):
@@ -95,9 +91,9 @@ if __name__ == '__main__':
     # print(boolean14(0, 0, -2))
     # print(boolean17(904))
     # print(boolean21(121))
-    # print(boolean31(0, 2, 4))
+    print(boolean31(4, 4, 3))
     # print(boolean34(2, 8))
-    print(boolean39(2, 2, 5, 5))
+    # print(boolean39(2, 3, 1, 1))
 
 
 #

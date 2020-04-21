@@ -198,6 +198,20 @@ def task_5(phrase: str):
                   f"character {l_position_in_text[word_num]}.", end="\n")
             word_num += 1
 
+def task_6(input: str):
+    """Нам дана строка символов, из которой нужно удалить все дубликаты. При этом порядок символов имеет значение.
+    Каким будет результат?
+    Input : geeksforgeeks
+    Output : efgkos
+    """
+    no_repeat = set(input)
+    sorted_list = sorted(list(no_repeat))
+    sorted_str = ''.join(sorted_list)
+    return sorted_str
+
+
+
+
 
 if __name__ == '__main__':
     # print(task_0("I love you. You are the best. Our life is cool."))
@@ -205,4 +219,5 @@ if __name__ == '__main__':
     # print(task_2("My uncle. What a worthy man. Falling ill like that. And dying."))
     # print(task_3("I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv."))
     # task_4(" I like to write code. I am the best programmer. Learning is light and ignorance is darkness.")
-    task_5("You you you like to write You the Best code. I You am the best programmer and you too. You are perfect.")
+    # task_5("You you you like to write You the Best code. I You am the best programmer and you too. You are perfect.")
+    print(task_6("geeksforgeeks"))

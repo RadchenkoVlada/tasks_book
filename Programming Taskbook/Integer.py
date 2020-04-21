@@ -117,7 +117,7 @@ if __name__ == '__main__':
     #
     # print(integer28(3, 18))  # For these numbers correct answer is - Saturday
 
-    count_square, area_remaining = integer29(3, 2, 1)
+    count_square, area_remaining = integer29(3, 5, 2)
     print(f"Number of square(s) - {count_square}, unallocated area of ​​the rectangle - {area_remaining}")
 
 #

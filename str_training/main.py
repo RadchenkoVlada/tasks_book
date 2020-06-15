@@ -40,7 +40,7 @@ def task_2 (input: str):
 
     Note:
     if the first word in the sentence is a name you can't know is it name or just word
-    :type input: str
+    :type_item input: str
     """
     sentences = input.split(".")
     # last symbol is . so last el of split is empty string
@@ -78,7 +78,7 @@ def task_3 (input: str):
     Example:
     Input: I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv.
     Output: Vlada, Radchenko, Kharkiv
-    :type input: str
+    :type_item input: str
     """
     answer = [ ]
     sentences = input.split(".")
@@ -198,6 +198,7 @@ def task_5(phrase: str):
                   f"character {l_position_in_text[word_num]}.", end="\n")
             word_num += 1
 
+
 def task_6(input: str):
     """Нам дана строка символов, из которой нужно удалить все дубликаты. При этом порядок символов имеет значение.
     Каким будет результат?
@@ -208,9 +209,6 @@ def task_6(input: str):
     sorted_list = sorted(list(no_repeat))
     sorted_str = ''.join(sorted_list)
     return sorted_str
-
-
-
 
 
 if __name__ == '__main__':

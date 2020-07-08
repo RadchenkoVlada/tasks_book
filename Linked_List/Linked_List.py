@@ -1,41 +1,64 @@
-from Iter import LinkedListIterator
+from LinkedListIterator import LinkedListIterator
 from Node import Node
 from collections.abc import Iterable, Iterator
+"""Code is more often read than written - Guido van Rossum"""
 
-class LinkedList:
-    def __init__(self, head: Node = None) -> object:
+
+class LinkedList(Iterable):
+    def __init__(self, head: Node = None):
+        """
+        The constructor creates an object of type LinkedList with field head of type Node
+        :param head: Node
+
+        """
         self.head = head
 
     def __str__(self):
+        """
+        TODO: __str__ never prints!!
+        Prints a LinkedList, returns a readable text for a user.
+        If the list is empty, it will be look like this: LinkedList(),
+        if it is not an empty list then so LinkedList(1, 2, 3)
+        :return: str
+        """
         if self.head is None:
             return "LinkedList()"
         else:
             res = "LinkedList(" + str(self.head.data)
             curr_node = self.head
-            # TODO: use usual for when it will be ready ?
+            # TODO: use usual "for" when it will be ready ?
             while curr_node.pointer_next is not None:
                 res += ", " + str(curr_node.pointer_next.data)
                 curr_node = curr_node.pointer_next
             return res + ')'
 
     def __len__(self):
+        """
+        Counts the elements in LinkedList.
+        :return:int
+        """
         length = 0
         if self.head is not None:
             cur_head = self.head
             length = 1
-            # TODO: use usual for when it will be ready ?
+            # TODO: use usual "for" when it will be ready ?
             while cur_head.pointer_next is not None:
                 length += 1
                 cur_head = cur_head.pointer_next
         return length
 
     def __bool__(self):
-        return self.head is not None
+        """
+        Checks the list for emptiness
+        :return: bool
+        """
+        return self.head is not None# returns True
 
     """Called to implement evaluation of self[key]."""
 
     def __getitem__(self, index: int):
         """
+        Called to implement evaluation of self[key].
         If key is of an inappropriate type, TypeError may be raised; if of a value outside the set of indexes for the
         sequence (after any special interpretation of negative values), IndexError should be raised.
         For mapping types, if key is missing (not in the container), KeyError should be raised.
@@ -56,6 +79,12 @@ class LinkedList:
         return cur_head
 
     def __delitem__(self, index):
+        """
+        TODO: param type
+        Removes an item by index
+        :param index:
+        :return: None
+        """
         length = len(self)
         if index >= length or index < -length:
             raise IndexError(f"The index out of range in Linked List")
@@ -71,6 +100,19 @@ class LinkedList:
             previous_item.pointer_next = previous_item.pointer_next.pointer_next
 
     def __iter__(self):
+        """
+        TODO:
+        1. in case it takes iterable it shoud be listed in function arguments.
+        2. return type can be specified in more details, particular class of return object or just collections.abc.Iterator
+
+        Takes iterables as an argument.
+        Defines an iterator for the class LinkedList.
+
+        Using this method we get an iterator and then repeatedly asking the iterator
+        for the next item in LinkedList.
+
+        :return: iterator type of LinkedList
+        """
         return LinkedListIterator(self)
 
     # doesn't work
@@ -84,8 +126,13 @@ class LinkedList:
     #         else:
     #             return False
 
-    # no return in this function
+
     def left_append(self, input):
+        """
+        The function append a Node at the beginning of LinkedList
+        :param input: any type
+        :return: no return in this function
+        """
         # empty linked_list
         if not self:
             self.head = Node(input)
@@ -95,8 +142,12 @@ class LinkedList:
             self.head = Node(input)
             self.head.pointer_next = node_head
 
-    # no return in this function
     def right_append(self, input):
+        """
+        The function append a Node at the end of LinkedList
+        :param input: any type
+        :return: no return in this function
+        """
         # empty linked_list
         if not self:
             self.head = Node(input)
@@ -107,12 +158,20 @@ class LinkedList:
             cur_head.pointer_next = Node(input)
 
     def delete_first_el(self):
+        """
+        The function deletes the first element in LinkedList
+        :return: no return
+        """
         if not self:
             raise ValueError('The LinkedList is empty!')
         else:
             self.head = self.head.pointer_next
 
     def delete_last_el(self):
+        """
+        The function deletes the last element in LinkedList
+        :return: no return
+        """
         if not self:
             raise ValueError('The LinkedList is empty!')
         elif len(self) == 1:
@@ -125,14 +184,6 @@ class LinkedList:
                 cur_head = cur_head.pointer_next
             future_last_elem.pointer_next = None
 
+    # not implemented yet
     def search(self):  # n1 = ll.search(1) # Node(1, None)
         pass
-
-
-
-
-
-
-
-
-

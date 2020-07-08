@@ -3,7 +3,7 @@ LENGTH_OF_PASSPORT = 9
 
 
 class Student:
-    def __init__(self, name: str, last_name : str, passport: str):
+    def __init__(self, name: str, last_name: str, passport: str):
         self.name = name
         self.last_name = last_name
         self.passport = passport
@@ -28,16 +28,16 @@ class Student:
         return avg_mark
 
     def __str__(self):
-        return "name - {0}, last name - {1}, passport = {2}, all marks = {3}".format(self.name, self.last_name,
-                                                                                     self.passport, self.all_marks)
+        return f"name - {self.name}, last name - {self.last_name}, passport = {self.passport}, all marks = {self.all_marks}"
 
     def __repr__(self):
         return self.__str__()
-
+    # it is the getter() for attribute name
     @property
     def name(self):
         return self._name
 
+    # it is the setter() for attribute name
     @name.setter
     def name(self, new_name):
         if not isinstance(new_name, str):

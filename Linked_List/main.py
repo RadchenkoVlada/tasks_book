@@ -1,23 +1,23 @@
 from Node import Node
 from Linked_List import LinkedList
-from Iter import LinkedListIterator, LinkedCollection
 
 if __name__ == '__main__':
     """create LinkedList"""
     n1 = Node(1)
-    # n2 = Node(7)
-    # n1.pointer_next = n2
-    # ll = LinkedList(n1)
-    ll = LinkedList()
-    # ll.delete_first_el()
-    # print(ll)
+    n2 = Node(7)
+    n1.pointer_next = n2
+    ll = LinkedList(n1)
+    # ll = LinkedList()
+    print(ll)
+    if ll:
+        print("Not emmpty!")
     """length of LinkedList"""
     # print(len(ll))
 
     """append to left"""
     # print(ll)
-    ll.left_append(42)
-    ll.left_append(2)
+    # ll.left_append(42)
+    # ll.left_append(2)
     # print(ll)
     """check list for emptiness"""
     # if ll.is_empty():
@@ -29,8 +29,9 @@ if __name__ == '__main__':
     # print(f"none - {len(ll1)}")
     # ll1 = LinkedList(Node(0))
     #
-    ll.right_append(10)
-    ll.right_append(16)
+    # ll.right_append(10)
+    # ll.right_append(16)
+    # type(print(ll))
     #
     # print(len(ll1))
     """get_by_index"""
@@ -69,16 +70,18 @@ if __name__ == '__main__':
     # print(ll)
     # print(10 in ll)
     #
-    print(ll)
-    for i in ll:
-        print("fuck ", i)
     # print(ll)
+    # for i in ll:
+    #     print("fuck ", i)
+    #
+    # sum = 0
+    # for i in ll:
+    #     sum += i
+    # print(sum)
+
     """magic 6"""
     # for el in ll:
     #     print(f"contains {el}")
-    l = [1, 2, 3]
-    iterator = iter(l)
-    next(iterator)
 
     # General Purpose: client code
     # ll = LinkedList()  # так не работает, если в аргумент подать None - работает

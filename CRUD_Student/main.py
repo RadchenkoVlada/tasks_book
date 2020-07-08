@@ -29,7 +29,7 @@ def choose_student(students):
 def main():
     students = []
     do = ""
-    s = StorageJSON() # initializing
+    s = StorageJSON()  # initializing
     while do != 10:
         try:
             do = int(input("Please choose what to do:\n"

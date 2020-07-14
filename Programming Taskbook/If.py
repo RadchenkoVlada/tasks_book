@@ -115,17 +115,15 @@ def if24(x):
         f(x) =   1, если x принадлежит [0,1), [2,3), ... ,
                 -1, если x принадлежит [1, 2), [3, 4), . . . .
     """
-    # we are want to take the integer part of the number
+    # we want to take the integer part of the number
     # integer is the second el in tuple and fractional is the first el
     integer_num = int(math.modf(x)[1])
     if integer_num < 0:
         return 0
     elif integer_num % 2 == 0:
-        if integer_num <= x < integer_num + 1:
-            return 1
+        return 1
     elif integer_num % 2 != 0:
-        if integer_num <= x < integer_num + 1:
-            return -1
+        return -1
 
 
 if __name__ == '__main__':

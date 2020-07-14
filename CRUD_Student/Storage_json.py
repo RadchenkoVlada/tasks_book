@@ -9,6 +9,7 @@ class StorageJSON(Storage):
 
     def save(self, students):
         with open(self._file_name, "w") as write_file:
+            # method dump() is used to write data to files
             json.dump([student.__dict__ for student in students], write_file)
 
     def load(self):
@@ -20,5 +21,6 @@ class StorageJSON(Storage):
     #TODO add all_marks
     @staticmethod
     def trans(d):
-        return Student(d["_name"], d["_last_name"], d["_passport"])
-
+        s = Student(d["_name"], d["_last_name"], d["_passport"])
+        print(s.__dict__)
+        return s

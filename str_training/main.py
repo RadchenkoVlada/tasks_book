@@ -40,7 +40,7 @@ def task_2 (input: str):
 
     Note:
     if the first word in the sentence is a name you can't know is it name or just word
-    :type input: str
+    :type_item input: str
     """
     sentences = input.split(".")
     # last symbol is . so last el of split is empty string
@@ -78,7 +78,7 @@ def task_3 (input: str):
     Example:
     Input: I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv.
     Output: Vlada, Radchenko, Kharkiv
-    :type input: str
+    :type_item input: str
     """
     answer = [ ]
     sentences = input.split(".")
@@ -116,10 +116,9 @@ def task_4(input: str):
     for index in range(len(sentences)):
         if index == (len(sentences) - 1):
             sentences[-1] = "- " + sentences[-1] + "."
-            print(sentences[index])
         else:
             sentences[index] = "- " + sentences[index].strip() + ";"
-            print(sentences[index])
+        print(sentences[index])
 
 
 def task_5(phrase: str):
@@ -153,25 +152,19 @@ def task_5(phrase: str):
     print(f"{number_of_times_in_text} entry of word '{search_word}' has been found:\t")
 
     # Searching the position of word in the text countdown from the beginning of the text.
-    search_pos = 0
-    l_position_in_text = []
+    def find_position_in_text():
+        l_position_in_text = []
+        for search_word in [lower_search_word, capital_search_word]:
+            search_pos = 0
+            found_letter = phrase.find(search_word, search_pos)
+            while found_letter != -1:
+                search_pos = found_letter + len(search_word)
+                l_position_in_text.append(found_letter + 1)
+                found_letter = phrase.find(search_word, search_pos)
+        l_position_in_text.sort()
+        return l_position_in_text
 
-    found_lower = phrase.find(lower_search_word, search_pos)
-    while found_lower != -1:
-        search_pos = found_lower + len(search_word)
-        l_position_in_text.append(found_lower + 1)
-        found_lower = phrase.find(lower_search_word, search_pos)
-
-    search_pos = 0
-    while True:
-        found_capital = phrase.find(capital_search_word, search_pos)
-        if found_capital != -1:
-            search_pos = found_capital + len(search_word)
-            l_position_in_text.append(found_capital + 1)
-        else:
-            break
-    l_position_in_text.sort()
-    print(f"Position in the text of character word '{search_word}' :{l_position_in_text}")
+    print(f"Position in the text of character word '{search_word}' :{find_position_in_text()}")
 
     sentences = phrase.split(".")
     # removing the empty line at the end
@@ -183,26 +176,39 @@ def task_5(phrase: str):
 
     word_position_in_text = []
     words_in_the_text = without_dots.split(' ')
-    for index in range(len(words_in_the_text)):
-        if words_in_the_text[index] == lower_search_word or words_in_the_text[index] == capital_search_word:
-            word_position_in_text.append(index + 1)
+    for count, word in enumerate(words_in_the_text, 1):
+        if word == lower_search_word or word == capital_search_word:
+            word_position_in_text.append(count)
     print(f"Position in the text of word '{search_word}' :{sorted(word_position_in_text)}")
 
     # Searching the position in the sentence
     for i in range(len(sentences)):
-        words = sentences[i].split()
         l = []
-        for index in range(len(words)):
-            if words[index] == lower_search_word or words[index] == capital_search_word:
-                l.append(index + 1)
+        words = sentences[i].split()
+        for count, word in enumerate(words, 1):
+            if word == lower_search_word or word == capital_search_word:
+                l.append(count)
         sentence_word[i + 1] = l
 
     word_num = 0
+    l_position_in_text = find_position_in_text()
     for sentence, words_in_sentence in sentence_word.items():
         for word in words_in_sentence:
             print(f"-sentence {sentence} word {word} .Position in the text: word {word_position_in_text[word_num]} "
                   f"character {l_position_in_text[word_num]}.", end="\n")
             word_num += 1
+
+
+def task_6(input: str):
+    """Нам дана строка символов, из которой нужно удалить все дубликаты. При этом порядок символов имеет значение.
+    Каким будет результат?
+    Input : geeksforgeeks
+    Output : efgkos
+    """
+    no_repeat = set(input)
+    sorted_list = sorted(list(no_repeat))
+    sorted_str = ''.join(sorted_list)
+    return sorted_str
 
 
 if __name__ == '__main__':
@@ -211,4 +217,5 @@ if __name__ == '__main__':
     # print(task_2("My uncle. What a worthy man. Falling ill like that. And dying."))
     # print(task_3("I am Vlada. Vlada loves programming. The Radchenko is the best family. The Radchenko lives in Kharkiv."))
     # task_4(" I like to write code. I am the best programmer. Learning is light and ignorance is darkness.")
-    task_5("You you you like to write You the Best code. I am the best programmer and you too. You are perfect.")
+    # task_5("You you you like to write You the Best code. I You am the best programmer and you too. You are perfect.")
+    print(task_6("geeksforgeeks"))

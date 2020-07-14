@@ -13,7 +13,7 @@ def begin9(a, b):
     if a < 0 or b < 0:
         raise ValueError("Number should be non-negative")
     geometric_mean = math.sqrt(a * b)
-    return type(geometric_mean)
+    return geometric_mean
 
 
 def begin23(a: int, b: int, c: int):

@@ -4,6 +4,9 @@ from Node import Node
 
 
 class TestLinkedList(unittest.TestCase):
+    """
+    My first unittest ever, it checks if __bool__ method works correctly
+    """
     def test_1__bool__(self):
         n1 = Node(1)
         ll = LinkedList(n1)

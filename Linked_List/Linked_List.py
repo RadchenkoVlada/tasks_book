@@ -15,8 +15,7 @@ class LinkedList(Iterable):
 
     def __str__(self):
         """
-        TODO: __str__ never prints!!
-        Prints a LinkedList, returns a readable text for a user.
+        Return a LinkedList, returns a readable text for a user.
         If the list is empty, it will be look like this: LinkedList(),
         if it is not an empty list then so LinkedList(1, 2, 3)
         :return: str
@@ -52,7 +51,7 @@ class LinkedList(Iterable):
         Checks the list for emptiness
         :return: bool
         """
-        return self.head is not None# returns True
+        return self.head is not None  # returns True
 
     """Called to implement evaluation of self[key]."""
 

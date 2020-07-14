@@ -4,11 +4,7 @@ import os
 from Storage import Storage
 
 
-
-
 class StoragePickle(Storage):
-
-    # why i need method because i have already the students.pickle
     def __init__(self):
         self._file_name = "students.pickle"
 

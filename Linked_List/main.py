@@ -1,17 +1,29 @@
 from Node import Node
 from Linked_List import LinkedList
 
+
 if __name__ == '__main__':
+    """
+    help()
+    The Python help function can be super helpful for easily pulling up documentation for classes and methods. 
+    We can call the help function on one of our classes, which will return some basic info about the methods defined 
+    in our class
+
+    """
+
     """create LinkedList"""
     n1 = Node(1)
     n2 = Node(7)
     n1.pointer_next = n2
     ll = LinkedList(n1)
-    # ll = LinkedList()
+    ll.left_append(100)
     print(ll)
-    if ll:
-        print("Not emmpty!")
+    # # ll = LinkedList()
+    # print(ll)
+    # if ll:
+    #     print("Not empty!")
     """length of LinkedList"""
+
     # print(len(ll))
 
     """append to left"""
@@ -26,16 +38,13 @@ if __name__ == '__main__':
     #     print("Not empty")
     """test append_right"""
     # ll1 = LinkedList(None)
-    # print(f"none - {len(ll1)}")
+    # # print(f"none - {len(ll1)}")
     # ll1 = LinkedList(Node(0))
-    #
+    # #
     # ll.right_append(10)
     # ll.right_append(16)
     # type(print(ll))
-    #
     # print(len(ll1))
-    """get_by_index"""
-    # print(ll1.get_by_index(3))
     """delete_first_el"""
     # print(ll1)
     # ll1.delete_first_el()
@@ -45,74 +54,44 @@ if __name__ == '__main__':
     # ll1.delete_last_el()
     # print(ll1)
     """delete_by_index"""
-    # ll1.delete_by_index(1)
+    # ll1.__delitem__(0)
+    # # ll1 must be empty now: LinkedList()
     # print(ll1)
 
-    """magic 1"""
+    """magic __len__()"""
     # print(len(ll))
-    """magic 2"""
+    """magic __bool__"""
     # print(ll)
     # if ll:
     #     print("Not empty")
     # else:
     #     print("Empty")
-    """magic 3"""
+    """magic __getitem__()"""
     # print(len(ll))
     # print(ll)
     # print(ll[-20])
-    """magic 4"""
-    # print(ll)
+    """magic __delitem__()"""
     # del ll[-1]
     # print(ll)
     # del ll[0]
     # print(ll)
-    """magic 5"""
+    """magic __contains__"""
     # print(ll)
-    # print(10 in ll)
-    #
-    # print(ll)
-    # for i in ll:
-    #     print("fuck ", i)
+    # if 7 in ll:
+    #     print("Vlada SUPER PRO")
     #
     # sum = 0
     # for i in ll:
     #     sum += i
     # print(sum)
 
-    """magic 6"""
+    """magic __iter__"""
     # for el in ll:
     #     print(f"contains {el}")
 
     # General Purpose: client code
-    # ll = LinkedList()  # так не работает, если в аргумент подать None - работает
-    # ll.append(42)
-    # ll.append(2)
-    # ll.append(3)
-    # ll.append(7)
-    # ll.append(1)
-    #
-    # print(ll.is_empty())
-    #
-    # if ll.is_empty():
-    #     print("Empty")
-    # else:
-    #     print("Not empty")
-    #
-    # print(len(ll))  # 5
-    # print(len(LinkedList()))  # 0
-    #
-    # print(ll.get_by_index(3)) # 7
-    # print(ll.get_by_index(10)) # exception
-    #
-    # ll.remove_by_index(3)
-    # print(ll) # LinkedList(3, 2, 3, 1)
-    #
+    #TODO: implement search
     # n1 = ll.search(1) # Node(1, None)
     # n2 = ll.search(42) # Node(42, ...) # next is 2
     # print(n2 is ll.head) # True
 
-    # for i in ll:
-    #     print(i)
-    #
-    # print(ll)
-    # print(ll[3])

@@ -40,10 +40,3 @@ class LinkedListIterator(Iterator):
             res = self._cur_head.data
             self._cur_head = self._cur_head.pointer_next
             return res
-
-        # if self._cursor >= int(len(self._collection)):
-        #     # End of Iteration
-        #     raise StopIteration
-        # else:
-        #     self._cursor += 1
-        #     return self._collection.head

@@ -9,7 +9,6 @@ class LinkedList(Iterable):
         """
         The constructor creates an object of type LinkedList with field head of type Node
         :param head: Node
-
         """
         self.head = head
 
@@ -40,7 +39,6 @@ class LinkedList(Iterable):
         if self.head is not None:
             cur_head = self.head
             length = 1
-            # TODO: use usual "for" when it will be ready ?
             while cur_head.pointer_next is not None:
                 length += 1
                 cur_head = cur_head.pointer_next
@@ -61,6 +59,8 @@ class LinkedList(Iterable):
         If key is of an inappropriate type, TypeError may be raised; if of a value outside the set of indexes for the
         sequence (after any special interpretation of negative values), IndexError should be raised.
         For mapping types, if key is missing (not in the container), KeyError should be raised.
+        :param index:
+        :return: class 'Node.Node'
         """
         length = len(self)
         if index >= length or index < -length:
@@ -89,8 +89,6 @@ class LinkedList(Iterable):
             raise IndexError(f"The index out of range in Linked List")
         if type(index) is not int:
             raise TypeError(f'Invalid argument type: {type(index)}')
-        if not self:
-            raise ValueError('The LinkedList is empty!')
 
         elif index == 0 or index == -length:
             self.delete_first_el()
@@ -100,31 +98,21 @@ class LinkedList(Iterable):
 
     def __iter__(self):
         """
-        TODO:
-        1. in case it takes iterable it shoud be listed in function arguments.
-        2. return type can be specified in more details, particular class of return object or just collections.abc.Iterator
-
-        Takes iterables as an argument.
         Defines an iterator for the class LinkedList.
 
         Using this method we get an iterator and then repeatedly asking the iterator
         for the next item in LinkedList.
 
-        :return: iterator type of LinkedList
+        :return: LinkedListIterator
         """
         return LinkedListIterator(self)
 
-    # doesn't work
-    # def __contains__(self, item):
-    #     print("Calling __contains__")
-    #     cur = self.head
-    #     while item != cur:
-    #         self.__next__()
-    #         if item == cur:
-    #             return True
-    #         else:
-    #             return False
-
+    def __contains__(self, item):
+        """Function checks if LinkedList contains an item"""
+        for el in self:
+            if el == item:
+                return True
+        return False
 
     def left_append(self, input):
         """
@@ -183,6 +171,3 @@ class LinkedList(Iterable):
                 cur_head = cur_head.pointer_next
             future_last_elem.pointer_next = None
 
-    # not implemented yet
-    def search(self):  # n1 = ll.search(1) # Node(1, None)
-        pass
